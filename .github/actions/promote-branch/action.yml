@@ -29,7 +29,7 @@ inputs:
   tempBranchPattern:
     description: 'Pattern for temp branch name'
     required: false
-    default: 'release/{source}-to-{target}-{version}'
+    default: 'pipecraft-promote/{source}-to-{target}-{version}'
   token:
     description: 'GitHub token for authentication'
     required: false
