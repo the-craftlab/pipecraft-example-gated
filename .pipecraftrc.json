@@ -4,13 +4,7 @@
   "requireConventionalCommits": true,
   "initialBranch": "develop",
   "finalBranch": "production",
-  "branchFlow": [
-    "develop",
-    "alpha",
-    "beta",
-    "release",
-    "production"
-  ],
+  "branchFlow": ["develop", "alpha", "beta", "release", "production"],
   "autoPromote": {
     "alpha": false,
     "beta": false,
@@ -18,51 +12,12 @@
     "production": false
   },
   "semver": {
-    "bumpRules": {
-      "feat": "minor",
-      "fix": "patch",
-      "breaking": "major"
-    }
+    "bumpRules": { "feat": "minor", "fix": "patch", "breaking": "major" }
   },
   "domains": {
-    "services": {
-      "paths": [
-        "services/**"
-      ],
-      "description": "Microservices",
-      "prefixes": [
-        "test",
-        "deploy"
-      ]
-    },
-    "web": {
-      "paths": [
-        "web/**"
-      ],
-      "description": "Web applications",
-      "prefixes": [
-        "test",
-        "deploy"
-      ]
-    },
-    "api": {
-      "paths": [
-        "api/**"
-      ],
-      "description": "API gateway",
-      "prefixes": [
-        "test",
-        "deploy"
-      ]
-    },
-    "shared": {
-      "paths": [
-        "shared/**"
-      ],
-      "description": "Shared libraries",
-      "prefixes": [
-        "test"
-      ]
-    }
+    "services": { "paths": ["services/**"], "description": "Microservices", "prefixes": ["test", "deploy"] },
+    "web": { "paths": ["web/**"], "description": "Web applications", "prefixes": ["test", "deploy"] },
+    "api": { "paths": ["api/**"], "description": "API gateway", "prefixes": ["test", "deploy"] },
+    "shared": { "paths": ["shared/**"], "description": "Shared libraries", "prefixes": ["test"] }
   }
 }
