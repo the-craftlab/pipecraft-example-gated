@@ -1,47 +1,16 @@
 {
   "ciProvider": "github",
-  "mergeStrategy": "merge",
+  "mergeStrategy": "fast-forward",
   "requireConventionalCommits": true,
   "initialBranch": "develop",
   "finalBranch": "production",
   "branchFlow": ["develop", "alpha", "beta", "release", "production"],
-  "autoMerge": {
-    "alpha": false,
-    "beta": false,
-    "release": false,
-    "production": false
-  },
-  "semver": {
-    "bumpRules": {
-      "feat": "minor",
-      "fix": "patch",
-      "breaking": "major"
-    }
-  },
+  "autoPromote": { "alpha": false, "beta": false, "release": false, "production": false },
+  "semver": { "bumpRules": { "feat": "minor", "fix": "patch", "breaking": "major" } },
   "domains": {
-    "services": {
-      "paths": ["services/**"],
-      "description": "Microservices",
-      "test": true,
-      "deployable": true
-    },
-    "web": {
-      "paths": ["web/**"],
-      "description": "Web applications",
-      "test": true,
-      "deployable": true
-    },
-    "api": {
-      "paths": ["api/**"],
-      "description": "API gateway",
-      "test": true,
-      "deployable": true
-    },
-    "shared": {
-      "paths": ["shared/**"],
-      "description": "Shared libraries",
-      "test": true,
-      "deployable": false
-    }
+    "services": { "paths": ["services/**"], "description": "Microservices",     "prefixes": ["test", "deploy"] },
+    "web":      { "paths": ["web/**"],      "description": "Web applications",   "prefixes": ["test", "deploy"] },
+    "api":      { "paths": ["api/**"],      "description": "API gateway",        "prefixes": ["test", "deploy"] },
+    "shared":   { "paths": ["shared/**"],   "description": "Shared libraries",   "prefixes": ["test"] }
   }
 }
