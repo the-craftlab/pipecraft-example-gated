@@ -380,6 +380,7 @@ jobs:
           sourceBranch: ${{ github.ref_name }}
           targetBranch: ${{ github.ref_name == 'develop' && 'alpha' || 'production' }}
           autoPromote: ${{ (github.ref_name == 'develop' && 'false') || (github.ref_name == 'alpha' && 'false') || (github.ref_name == 'beta' && 'false') || (github.ref_name == 'release' && 'false') || 'false' }}
+          mergeStrategy: merge
           run_number: ${{ inputs.run_number || github.run_number }}
 
   #=============================================================================
